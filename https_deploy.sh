@@ -13,9 +13,9 @@ echo "Failed"
 EXIT_STATUS=1
 fi
 
-echo -e "Changing permission ... \c"
-cd ${HTTP_HTML}
-chown root:root index.html
-chmod 644 index.html
-echo "done."
+#echo -e "Changing permission ... \c"
+#cd ${HTTP_HTML}
+#chown root:root index.html
+#chmod 644 index.html
+#echo "done."
 exit ${EXIT_STATUS}
