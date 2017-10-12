@@ -12,3 +12,9 @@ else
 echo "Failed"
 exit 1
 fi
+
+echo -e "Changing permission ... \c"
+cd ${HTTP_HTML}
+chown root:root index.html
+chmod 644 index.html
+echo "done."
