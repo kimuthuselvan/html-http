@@ -1,20 +1,23 @@
 #! /usr/bin/bash
 
+_exit_status ()
+{
+if [ $? -eq 0 ]
+then
+echo "Sucess"
+else
+echo "Failed"
+exit 1
+fi
+}
+
 HTTP_HTML=/var/www/html
 WORKSPACE=/opt/jenkins/workspace/html-http
 echo -e "Starting deployment at https server ... \c"
 cp -f ${WORKSPACE}/index.html ${HTTP_HTML}/
-if [ $? -eq 0 ]
-then
-echo "Sucess"
-EXIT_STATUS=0
-else
-echo "Failed"
-EXIT_STATUS=1
-fi
+_exit_status
 
 echo -e "Changing permission ... \c"
 cd ${HTTP_HTML}
 chmod 664 index.html
-echo "done."
-exit ${EXIT_STATUS}
+_exit_status
