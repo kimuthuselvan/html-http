@@ -15,7 +15,6 @@ fi
 
 echo -e "Changing permission ... \c"
 cd ${HTTP_HTML}
-chown root:root index.html
-chmod 644 index.html
+chmod 664 index.html
 echo "done."
 exit ${EXIT_STATUS}
